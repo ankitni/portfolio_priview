@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahul Chaturvedi | x86, C/C++, AI/ML, Python</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Ankit Mondal | x86, C/C++, AI/ML, Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -16,6 +16,20 @@
             --gray: #64748b;
             --success: #10b981;
             --code-bg: #1e293b;
+            
+            /* Theme variables */
+            --bg-color: #0a101f;
+            --text-color: #f8fafc;
+            --card-bg: rgba(30, 41, 59, 0.5);
+            --border-color: rgba(100, 116, 139, 0.2);
+        }
+        
+        /* Light theme */
+        [data-theme="light"] {
+            --bg-color: #f8fafc;
+            --text-color: #0f172a;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --border-color: rgba(100, 116, 139, 0.2);
         }
         
         * {
@@ -26,14 +40,15 @@
         
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #0a101f;
-            color: var(--light);
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
             background-image: 
                 radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 20%),
                 radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 20%);
             position: relative;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         
         /* Animated background particles */
@@ -83,9 +98,9 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            background: rgba(10, 16, 31, 0.95);
+            background: rgba(var(--bg-color), 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+            border-bottom: 1px solid var(--border-color);
             transition: all 0.3s ease;
         }
         
@@ -306,11 +321,11 @@
         }
         
         .skill-card {
-            background: rgba(30, 41, 59, 0.5);
+            background: var(--card-bg);
             border-radius: 15px;
             padding: 30px;
             transition: all 0.3s;
-            border: 1px solid rgba(100, 116, 139, 0.2);
+            border: 1px solid var(--border-color);
             backdrop-filter: blur(10px);
             transform: translateY(0);
             animation: floatCard 6s ease-in-out infinite;
@@ -395,12 +410,61 @@
             gap: 30px;
         }
         
+        .filter-btn {
+            background: var(--card-bg);
+            color: var(--gray);
+            border: 1px solid var(--border-color);
+            padding: 8px 20px;
+            margin: 0 5px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+        }
+        
+        /* Theme toggle button */
+        .theme-toggle {
+            position: fixed;
+            top: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .theme-toggle:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.5);
+        }
+        
+        .filter-btn:hover {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
         .project-card {
-            background: rgba(30, 41, 59, 0.5);
+            background: var(--card-bg);
             border-radius: 15px;
             overflow: hidden;
             transition: all 0.3s;
-            border: 1px solid rgba(100, 116, 139, 0.2);
+            border: 1px solid var(--border-color);
             transform: translateY(0);
             animation: floatCard 8s ease-in-out infinite;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -515,12 +579,12 @@
         
         /* Contact Section */
         .contact {
-            background: rgba(30, 41, 59, 0.3);
+            background: var(--card-bg);
             border-radius: 20px;
             padding: 50px;
             margin-top: 50px;
             text-align: center;
-            border: 1px solid rgba(100, 116, 139, 0.2);
+            border: 1px solid var(--border-color);
             position: relative;
             overflow: hidden;
             transition: all 0.3s;
@@ -767,7 +831,7 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    &lt;dev/<span>portfolio&gt;</span>
+                    &lt;Ankit/<span>portfolio&gt;</span>
                 </div>
                 <div class="nav-links" id="navLinks">
                     <a href="#home">Home</a>
@@ -786,7 +850,39 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Low-Level Systems & AI Developer</h1>
+                <div class="greeting">HI I am</div>
+                <h1 class="animated-name">Ankit Mondal</h1>
+                <style>
+                    .greeting {
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        margin-bottom: 10px;
+                        color: var(--secondary);
+                        animation: fadeIn 1.5s ease-in-out;
+                    }
+                    
+                    .animated-name {
+                        display: inline-block;
+                        animation: colorChange 3s infinite alternate, bounce 2s infinite;
+                    }
+                    
+                    @keyframes colorChange {
+                        0% { color: var(--primary); }
+                        50% { color: var(--secondary); }
+                        100% { color: var(--success); }
+                    }
+                    
+                    @keyframes bounce {
+                        0%, 100% { transform: translateY(0); }
+                        50% { transform: translateY(-10px); }
+                    }
+                    
+                    @keyframes fadeIn {
+                        0% { opacity: 0; transform: translateY(-20px); }
+                        100% { opacity: 1; transform: translateY(0); }
+                    }
+                </style>
+                <h2 style="font-size: 2rem; margin-bottom: 20px; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;">Low-Level Systems & AI Developer</h2>
                 <div class="typewriter" id="typewriter">Hello, I'm a developer specialized in x86 Assembly, C/C++, and Python AI/ML</div>
                 <p>I create high-performance systems, optimize algorithms, and build intelligent solutions that bridge the gap between hardware and artificial intelligence.</p>
                 <div class="social-links">
@@ -863,10 +959,16 @@
     <section class="section" id="projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
+            <div class="project-filter" style="text-align: center; margin-bottom: 30px;">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="system">System</button>
+                <button class="filter-btn" data-filter="ai">AI/ML</button>
+            </div>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-category="python ai">
                     <div class="project-img">
-                        <i class="fas fa-robot"></i>
+                        <i class="fas fa-shield-virus"></i>
                     </div>
                     <div class="project-content">
                         <h3>Vulnerability Scanner</h3>
@@ -880,9 +982,9 @@
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <div class="project-card" data-category="system">
                     <div class="project-img">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-microchip"></i>
                     </div>
                     <div class="project-content">
                         <h3>Custom Operating System</h3>
@@ -896,9 +998,9 @@
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <div class="project-card" data-category="ai">
                     <div class="project-img">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-brain"></i>
                     </div>
                     <div class="project-content">
                         <h3>Coming Soon</h3>
@@ -921,7 +1023,29 @@
             <div class="contact">
                 <h2 class="section-title">Get In Touch</h2>
                 <p>I'm currently available for freelance work and consulting. If you have a project that requires low-level expertise or AI solutions, let's connect!</p>
-                <a href="mailto:iamraholchaturvedi@gmail.com" class="contact-btn">
+                
+                <div class="contact-form" style="max-width: 600px; margin: 0 auto 30px auto;">
+                    <form id="contactForm" onsubmit="return handleFormSubmit(event)">
+                        <div style="margin-bottom: 20px;">
+                            <input type="text" id="name" placeholder="Your Name" required 
+                                style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(100, 116, 139, 0.3); color: var(--light); font-family: 'Montserrat', sans-serif;">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <input type="email" id="email" placeholder="Your Email" required
+                                style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(100, 116, 139, 0.3); color: var(--light); font-family: 'Montserrat', sans-serif;">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <textarea id="message" placeholder="Your Message" rows="5" required
+                                style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(100, 116, 139, 0.3); color: var(--light); font-family: 'Montserrat', sans-serif; resize: vertical;"></textarea>
+                        </div>
+                        <input type="hidden" name="recipient" value="iamraholchaturvedi@gmail.com">
+                        <button type="submit" class="contact-btn" style="width: 100%; cursor: pointer;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=iamraholchaturvedi@gmail.com" class="contact-btn" target="_blank">
                     <i class="fas fa-envelope"></i> Send me an Email
                 </a>
                 <div class="social-links contact-links" style="margin-top: 40px;">
@@ -930,6 +1054,12 @@
                     </a>
                     <a href="https://instagram.com/yourusername" class="social-icon" target="_blank">
                         <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
                     </a>
                 </div>
             </div>
@@ -940,7 +1070,7 @@
     <footer>
         <div class="container">
             <div class="footer-logo">
-                &lt;/dev&gt;
+                &lt;Ankit&gt;
             </div>
             <div class="footer-links">
                 <a href="#home">Home</a>
@@ -949,7 +1079,7 @@
                 <a href="#contact">Contact</a>
             </div>
             <div class="copyright">
-                &copy; <span id="currentYear"></span> Rahul Chaturvedi. All rights reserved.
+                &copy; <span id="currentYear"></span> Ankit Mondal. All rights reserved.
             </div>
         </div>
     </footer>
@@ -957,6 +1087,11 @@
     <!-- Scroll to top button -->
     <div class="scroll-top" id="scrollTop">
         <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- Theme toggle button -->
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon" id="themeIcon"></i>
     </div>
 
     <script>
@@ -1111,6 +1246,124 @@
             yearEl.textContent = new Date().getFullYear();
         }
         
+        // Project filtering functionality
+        function initProjectFilter() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+                    
+                    // Get filter value
+                    const filterValue = btn.getAttribute('data-filter');
+                    
+                    // Filter projects
+                    projectCards.forEach(card => {
+                        if (filterValue === 'all') {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0) scale(1)';
+                            }, 100);
+                        } else {
+                            const categories = card.getAttribute('data-category');
+                            if (categories && categories.includes(filterValue)) {
+                                card.style.display = 'block';
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translateY(0) scale(1)';
+                                }, 100);
+                            } else {
+                                card.style.opacity = '0';
+                                card.style.transform = 'translateY(20px) scale(0.9)';
+                                setTimeout(() => {
+                                    card.style.display = 'none';
+                                }, 300);
+                            }
+                        }
+                    });
+                });
+            });
+        }
+        
+        // Handle contact form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+            
+            // Simple validation
+            if (!nameInput.value || !emailInput.value || !messageInput.value) {
+                alert('Please fill in all fields');
+                return false;
+            }
+            
+            // Open Gmail compose in Chrome with pre-filled email
+            const subject = `Portfolio Contact: ${nameInput.value}`;
+            const body = `Name: ${nameInput.value}\nEmail: ${emailInput.value}\n\nMessage:\n${messageInput.value}`;
+            const recipient = 'iamraholchaturvedi@gmail.com';
+            
+            // Create Gmail compose URL
+            const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open in a new tab
+            window.open(gmailComposeUrl, '_blank');
+            
+            // Store name for the alert message
+            const userName = nameInput.value;
+            
+            // Reset form after a short delay
+            setTimeout(() => {
+                alert(`Thank you ${userName}! Your message is being composed in Gmail. Please complete and send it there.`);
+                nameInput.value = '';
+                emailInput.value = '';
+                messageInput.value = '';
+            }, 1000);
+            
+            return false;
+        }
+        
+        // Theme toggle functionality
+        function initThemeToggle() {
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+            const htmlElement = document.documentElement;
+            
+            // Check if user has a saved preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                htmlElement.setAttribute('data-theme', savedTheme);
+                updateThemeIcon(savedTheme);
+            }
+            
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme') || 'dark';
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                htmlElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                updateThemeIcon(newTheme);
+            });
+            
+            function updateThemeIcon(theme) {
+                if (theme === 'light') {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                } else {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                }
+            }
+        }
+        
         // Initialize everything when the DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             createParticles();
@@ -1120,6 +1373,8 @@
             initSmoothScroll();
             initMobileMenu();
             setCurrentYear();
+            initProjectFilter();
+            initThemeToggle();
         });
     </script>
 </body>
